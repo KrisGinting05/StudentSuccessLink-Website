@@ -1,0 +1,135 @@
+<div ng-hide="vm.show_user" id="loading">
+  <span class="glyphicon glyphicon-refresh loading" aria-hidden="true"></span> <h3 class="loading-title display-inline">{{"views.loading" | translate}}</h3>
+</div>
+<div ng-show="vm.show_user" class="container-fluid">
+  <div class="row">
+    <header class="header-background clearfix inverse">
+      <div class="container">
+        <div class="pull-left">
+          <h1 class="page-title">Students <div class="divider-vertical"></div> {{vm.organization_name}}</h1>
+        </div>
+      </div>
+    </header>
+
+    <section class="main-content container">
+
+      <div class="data-filters clearfix">
+        <form class="form-inline form-search">
+          <div class="form-group">
+            <input type="text" id="search" class="form-control" ng-model="search" placeholder="Search on student name or ID">
+          </div>
+          <div class="form-group">
+            <p class="form-control-static form-search-icon"><span class="glyphicon glyphicon-search"></span></p>
+          </div>
+        </form>
+        <div class="input-filters">
+          <span class="filter-label"><strong>Filter by:</strong></span>
+          <multiselect ms-header="All Districts" enable-filter="true" header="District" ng-model="vm.selected_districts" options="c.name for c in vm.districts_options" data-multiple="true"></multiselect>
+          <multiselect  ms-header="All Schools" change="vm.school_selected()" enable-filter="true" header="School" ng-model="vm.selected_schools" options="c.name for c in vm.schools_options" data-multiple="true"></multiselect>
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table id="student" class="table">
+          <thead fsm-sticky-header scroll-body="#student" scroll-stop="80">
+            <tr >
+              <th style="width: 20%;">
+                <!--<a href="" ng-click="sortType = 'name';sortReverse = !sortReverse">-->
+                <a href="" ng-click="vm.sort(vm.sort_name,'name')">
+                  Name
+                  <span ng-if="vm.header_name_selected" ng-hide="vm.sort_name" class="glyphicon glyphicon-sort-by-attributes-alt"></span>
+                  <span ng-if="vm.header_name_selected" ng-show="vm.sort_name" class="glyphicon glyphicon-sort-by-attributes"></span>
+                </a>
+              </th>
+              <th style="width: 8%;">
+                <a href="" ng-click="vm.sort(vm.sort_school_district_id,'district_id')">
+                  District Student ID
+                  <span ng-if="vm.header_district_id_selected" ng-hide="vm.sort_school_district_id" class="glyphicon glyphicon-sort-by-attributes-alt"></span>
+                  <span ng-if="vm.header_district_id_selected" ng-show="vm.sort_school_district_id" class="glyphicon glyphicon-sort-by-attributes"></span>
+                </a>
+              </th>
+              <th style="width: 5%;">
+                <a href="" ng-click="vm.sort(vm.sort_school_district,'school_district')">
+                  School District
+                  <span ng-if="vm.header_school_district" ng-hide="vm.sort_school_district" class="glyphicon glyphicon-sort-by-attributes-alt"></span>
+                  <span ng-if="vm.header_school_district" ng-show="vm.sort_school_district" class="glyphicon glyphicon-sort-by-attributes"></span>
+                </a>
+              </th>
+              <th style="width: 5%;">
+                <a href="" ng-click="vm.sort(vm.sort_grade_level,'grade_level')">
+                  Grade Level
+                  <span ng-if="vm.header_grade_level_selected" ng-hide="vm.sort_grade_level" class="glyphicon glyphicon-sort-by-attributes-alt"></span>
+                  <span ng-if="vm.header_grade_level_selected" ng-show="vm.sort_grade_level" class="glyphicon glyphicon-sort-by-attributes"></span>
+                </a>
+              </th>
+              <th style="width: 20%;">
+                <a href="" ng-click="vm.sort(vm.sort_current_school,'current_school')">
+                  Current School
+                  <span ng-if="vm.header_current_school_selected" ng-hide="vm.sort_current_school" class="glyphicon glyphicon-sort-by-attributes-alt"></span>
+                  <span ng-if="vm.header_current_school_selected" ng-show="vm.sort_current_school" class="glyphicon glyphicon-sort-by-attributes"></span>
+                </a>
+              </th>
+              <th style="width: 5%;" class="text-center">
+                <a href="" ng-click="vm.sort(vm.sort_attendance,'attendance')">
+                  Attendance
+                  <span ng-if="vm.header_attendance_selected" ng-hide="vm.sort_attendance" class="glyphicon glyphicon-sort-by-attributes-alt"></span>
+                  <span ng-if="vm.header_attendance_selected" ng-show="vm.sort_attendance" class="glyphicon glyphicon-sort-by-attributes"></span>
+                </a>
+              </th>
+              <th style="width: 5%;" class="text-center">
+                <a href="" ng-click="vm.sort(vm.sort_behavior,'behavior')">
+                  Behavior
+                  <span ng-if="vm.header_behavior_selected" ng-hide="vm.sort_behavior" class="glyphicon glyphicon-sort-by-attributes-alt"></span>
+                  <span ng-if="vm.header_behavior_selected" ng-show="vm.sort_behavior" class="glyphicon glyphicon-sort-by-attributes"></span>
+                </a>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="student in vm.students |filter:search|filter:vm.district_selected()|filter:vm.school_selected()">
+              <td>
+                <a href="javascript:void(0)" ui-sref="dashboard.student_detail({id:student.id})">
+                  {{student.first_name}} {{student.last_name}}
+                </a>
+              </td>
+              <td>
+                <span ng-if="student.district_student_id === ''">
+                  <span class="glyphicon glyphicon-minus"></span>
+                </span>
+                {{student.district_student_id}}
+              </td>
+              <td>
+                <span ng-if="student.school_district === ''">
+                  <span class="glyphicon glyphicon-minus"></span>
+                </span>
+                {{student.school_district}}
+              </td>
+              <td>
+                <span ng-if="student.xsre.grade_level === ''">
+                  <span class="glyphicon glyphicon-minus"></span>
+                </span>
+                {{student.xsre.grade_level}}
+              </td>
+              <td>
+                <span ng-if="student.xsre.school_name === ''">
+                  <span class="glyphicon glyphicon-minus"></span>
+                </span>
+                {{student.xsre.school_name}}
+              </td>
+              <td class="text-center">
+                <span ng-if="student.xsre.attendance.academic.count === ''">
+                </span>
+                <div popover-placement="right" popover-trigger="'mouseenter'" uib-popover-html="student.xsre.attendance.template" class='label label-student label-{{student.xsre.attendance.academic.flag}}'>{{student.xsre.attendance.academic.count}}</div>
+              </td>
+              <td class="text-center">
+                <span ng-if="student.xsre.behavior.month.count === ''">
+                </span>
+                <div popover-placement="right" popover-trigger="'mouseenter'" uib-popover-html="student.xsre.behavior.template" class="label label-student label-{{student.xsre.behavior.academic.flag}}">{{student.xsre.behavior.academic.count}}</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</div>

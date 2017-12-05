@@ -1,0 +1,31 @@
+<div class="container-fluid user_edit_permission">
+    <div class="row">
+        <header class="header-background clearfix inverse">
+            <div class="container">
+                <div class="pull-left">
+                    <h1 class="page-title">{{"views.user_assign_student_to"|translate}} : {{vm.full_name}}</h1>
+                </div>
+            </div>
+        </header>
+        <section class="main-content container">
+            <div class="alert alert-info text-left message" ng-show=vm.message>
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> {{vm.message}}
+            </div>
+            <div class="col-md-6">
+                <form>
+                    <div class="form-group" ng-hide="vm.new_student">
+                        <label for="student_id" class="control-label">{{"views.student"|translate}}:</label>
+                        <div class="selectwrap">
+                            <select ng-model="vm.student.student_id" class="form-control" id="student_id" ng-options="student._id as student.first_name+' '+student.last_name for student in vm.students">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button ng-click="vm.submit(vm.student)">{{"views.submit"|translate}}</button>
+                        <button ng-click="goBack()">{{"views.back"|translate}}</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+</div>

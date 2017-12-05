@@ -1,0 +1,49 @@
+@mixin bg-color($color,$opacity:1){
+    background: $color;
+    opacity: $opacity;
+}
+
+@mixin font-color($color){
+    color: $color;
+}
+
+@mixin font-size($font-size,$line-height){
+    font-size: $font-size;
+    line-height: $line-height;
+}
+
+@mixin font($font-family,$font-size,$line-height,$font-weight: 400){
+    font-family:$font-family;
+    font-size: $font-size;
+    line-height: $line-height;
+    font-weight: $font-weight;
+}
+
+// Media Queries
+//
+// Allows you to use inline media queries.
+//
+// $breakpoint - Desired breakpoint. Can be variable or unit.
+// $query - Defaults to `min-width`.
+// $type - Defaults to `screen`.
+
+@mixin mq($breakpoint, $query: 'min-width', $type: 'screen') {
+    @media #{$type} and (#{$query}: #{$breakpoint}) { @content; }
+}
+
+
+/*----------  Gradient https://www.sitepoint.com/building-linear-gradient-mixin-sass/  ----------*/
+
+// ex. @include linear-gradient(-45deg, $orange 0%, $pink 69%);
+
+@mixin linear-gradient($direction, $color-stops...) {
+  // Direction has been omitted and happens to be a color-stop
+  @if is-direction($direction) == false {
+    $color-stops: $direction, $color-stops;
+    $direction: 180deg;
+  }
+
+  background: nth(nth($color-stops, 1), 1);
+  background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+  background: linear-gradient($direction, $color-stops);
+}

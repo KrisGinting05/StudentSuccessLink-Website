@@ -1,0 +1,193 @@
+body.login-page,
+body.forgot-page,
+body.submission-page,
+body.reset-page,
+body.error-page{
+  background: url('../../images/bg-full-width.jpg') no-repeat center center fixed;
+  background-size: cover;
+  justify-content: center;
+  color: $color-white;
+  background-color: $color-pink;
+  a {
+    color: $color-white;
+    &:focus,
+    &:hover {
+      color: $color-white;
+      text-decoration: underline;
+    }
+  }
+
+
+  .login-wrapper{
+    max-width: 475px;
+    margin: 0 auto;
+    padding: 0 2em;
+  }
+
+  .message-outer {
+    position: fixed;
+    width: 100%;
+    top: 15px;
+    @media (max-width: $screen-xs-max) {
+      position: relative;
+    }
+    @media (max-height: 600px) {
+      position: relative;
+    }
+  }
+
+
+
+  .login-checkbox {
+    margin-bottom: 5px;
+    label{
+      text-transform: none;
+    }
+  }
+
+  .login-welcome-content{
+    h3{
+      margin: 0;
+    }
+  }
+
+  .header-logo{
+    text-align: center;
+    margin: 1em 0 1.8em;
+    img{
+      max-width: 180px;
+    }
+  }
+
+  .login-form {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    box-shadow: 0 0 40px -5px rgba($color-true-black, 0.3);
+    padding: 20px 45px;
+    margin: 15px auto;
+    position: relative;
+    .blur-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-filter: blur(5px);
+      background: url('../../images/bg-full-width.jpg') no-repeat center;
+      z-index: -1;
+      background-position-y: 66%;
+    }
+    input {
+        text-align: center;
+        transform: all 0.3s ease-out;
+        &::-webkit-input-placeholder {
+            color: $white;
+        }
+        &:-moz-placeholder {
+            color: $white;
+            opacity: 1;
+        }
+        &::-moz-placeholder {
+            color: $white;
+            opacity: 1;
+        }
+        &:-ms-input-placeholder {
+            color: $white;
+        }
+        &:focus::-webkit-input-placeholder {
+            color: transparent;
+        }
+        &:focus:-moz-placeholder {
+            color: transparent;
+        }
+        /* FF 4-18 */
+        &:focus::-moz-placeholder {
+            color: transparent;
+        }
+        /* FF 19+ */
+        &:focus:-ms-input-placeholder {
+            color: transparent;
+        }
+        /* IE 10+ */
+    }
+
+  .content-form{
+    max-width: 260px;
+    margin: 10px auto 0;
+  }
+
+
+  }
+  .forgot-form {
+    //padding-bottom: 30px;
+    .back_btn {
+      position: absolute;
+      right: 0;
+      top: 0;
+      display: block;
+      padding: 1em;
+      // margin-bottom: 15px;
+      // display: block;
+      // width: 100%;
+      // text-align: right;
+    }
+  }
+  ui-view.ng-scope, .error-wrapper {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    div.page-wrapper {
+      position: relative;
+      top: 45%;
+      transform: translateY(-50%);
+      @media (max-width: $screen-xs-max) {
+        top: 0;
+        transform: none;
+      }
+      @media (max-height: 640px) {
+        top: 0;
+        transform: none;
+      }
+    }
+    footer {
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+      margin-bottom: 40px;
+      @include font-size(1em,
+        1.5);
+      @media (max-height: 640px) {
+        position: relative;
+      }
+      @media (max-width: $screen-xs-max) {
+        position: relative;
+      }
+      ul {
+        padding-left: 0;
+        list-style: none;
+        li {
+          display: inline-block;
+          padding: 0 15px;
+          @media (max-width: $screen-xss-max) {
+            display: block;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .error-section{
+    margin: 6em 0;
+    h1{
+      font-size: rem(55);
+    }
+    p{
+      font-size: rem(18);
+    }
+    .btn{
+
+    }
+  }
+
+}

@@ -1,0 +1,56 @@
+<div class="message-outer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="alert alert-info text-left message" ng-show=vm.message>
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    {{vm.message}}
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+<div class="page-wrapper">
+  <div class="login-wrapper">
+
+    <header>
+      <div class="header-logo">
+        <img src="images/logo-white.svg" alt="Logo">
+      </div>
+    </header>
+
+    <section class="login-container">
+      <div class="login-welcome-content text-center">
+        <h4 ng-show="vm.login_greetings">{{"views.welcome_back" | translate}} {{vm.login_greetings}}!</h4>
+        <h4 class="normal">{{"views.login.header" | translate}} <br> {{vm.organization_name}}</h4>
+      </div>
+      <form class="login-form forgot-form" ng-submit="vm.reset(vm.user)">
+        <div class="blur-bg"></div>
+        <div class="content-form text-center">
+          <a class="back_btn pull-right" ui-sref="login"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+          <div class="form-group">
+            <h3 class="normal">{{"views.forgot_password.associate_email" | translate}}</h3>
+          </div>
+          <div class="form-group">
+            <label for="email"></label>
+            <input type="email" class="form-control inverse" id="email" placeholder="Email Address" ng-model="vm.user.email" autocomplete="off">
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="hvr-fade btn btn-login btn-full">{{"views.submit" | translate}}</button>
+          </div>
+        </div>
+      </form>
+      <p class="announcement text-center">Never share your password with anyone. <span class="circle-white hidden-xs" popover-placement="top" popover-trigger="'mouseenter'" uib-popover-template="vm.help.templateUrl">?</span></p>
+    </section>
+  </div>
+</div>
+
+<footer>
+  <ul class="text-center">
+      <li><a target="_blank" href="https://www.psesd.org" class="bold">{{"views.login.about_psesd" | translate}}</a></li>
+      <li><a target="_blank" href="http://studentsuccesslink.org/" class="bold">{{"views.about_student_success_link" | translate}}</a></li>
+      <li><a target="_blank" href="https://www.psesd.org/student-success-link-privacy-policy/" class="bold">{{"views.privacy_policy" | translate}}</a></li>
+  </ul>
+</footer>

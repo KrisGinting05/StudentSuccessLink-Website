@@ -1,0 +1,373 @@
+.bg-white {
+  @include bg-color($color-white);
+  color: $color-black;
+}
+
+.bg-black {
+  @include bg-color($color-black);
+  color: $color-white;
+}
+
+.bg-black-900 {
+  @include bg-color($color-black, .9);
+  color: $color-white;
+}
+
+.bg-black-800 {
+  @include bg-color($color-black, .8);
+  color: $color-white;
+}
+
+.bg-black-700 {
+  @include bg-color($color-black, .7);
+  color: $color-white;
+}
+
+.bg-black-600 {
+  @include bg-color($color-black, .6);
+  color: $color-white;
+}
+
+.bg-black-500 {
+  @include bg-color($color-black, .5);
+  color: $color-white;
+}
+
+.bg-blue-navy {
+  @include bg-color($color-blue-navy);
+  color: $color-white;
+}
+
+.bg-blue-navy-900 {
+  @include bg-color($color-blue-navy, .9);
+  color: $color-white;
+}
+
+.bg-blue-navy-800 {
+  @include bg-color($color-blue-navy, .8);
+  color: $color-white;
+}
+
+.bg-blue-navy-700 {
+  @include bg-color($color-blue-navy, .7);
+  color: $color-white;
+}
+
+.bg-blue-navy-600 {
+  @include bg-color($color-blue-navy, .6);
+  color: $color-white;
+}
+
+.bg-blue-navy-500 {
+  @include bg-color($color-blue-navy, .5);
+  color: $color-white;
+}
+
+.bg-grey {
+  @include bg-color($color-grey);
+}
+
+.bg-grey-900 {
+  @include bg-color($color-grey, .9);
+}
+
+.bg-grey-800 {
+  @include bg-color($color-grey, .8);
+}
+
+.bg-grey-700 {
+  @include bg-color($color-grey, .7);
+}
+
+.bg-grey-600 {
+  @include bg-color($color-grey, .6);
+}
+
+.bg-grey-500 {
+  @include bg-color($color-grey, .5);
+}
+
+.bg-purple {
+  @include bg-color($color-purple);
+  color: $color-white;
+}
+
+.bg-purple-900 {
+  @include bg-color($color-purple, .9);
+  color: $color-white;
+}
+
+.bg-purple-800 {
+  @include bg-color($color-purple, .8);
+  color: $color-white;
+}
+
+.bg-purple-700 {
+  @include bg-color($color-purple, .7);
+  color: $color-white;
+}
+
+.bg-purple-600 {
+  @include bg-color($color-purple, .6);
+  color: $color-white;
+}
+
+.bg-purple-500 {
+  @include bg-color($color-purple, .5);
+  color: $color-white;
+}
+
+.bg-cyan {
+  @include bg-color($color-cyan);
+}
+
+.bg-cyan-900 {
+  @include bg-color($color-cyan, .9);
+}
+
+.bg-cyan-800 {
+  @include bg-color($color-cyan, .8);
+}
+
+.bg-cyan-700 {
+  @include bg-color($color-cyan, .7);
+}
+
+.bg-cyan-600 {
+  @include bg-color($color-cyan, .6);
+}
+
+.bg-cyan-500 {
+  @include bg-color($color-cyan, .5);
+}
+
+.bg-teal {
+  @include bg-color($color-teal);
+}
+
+.bg-teal-900 {
+  @include bg-color($color-teal, .9);
+}
+
+.bg-teal-800 {
+  @include bg-color($color-teal, .8);
+}
+
+.bg-teal-700 {
+  @include bg-color($color-teal, .7);
+}
+
+.bg-teal-600 {
+  @include bg-color($color-teal, .6);
+}
+
+.bg-teal-500 {
+  @include bg-color($color-teal, .5);
+}
+
+.bg-orange {
+  @include bg-color($color-orange);
+}
+
+.bg-orange-900 {
+  @include bg-color($color-orange, .9);
+}
+
+.bg-orange-800 {
+  @include bg-color($color-orange, .8);
+}
+
+.bg-orange-700 {
+  @include bg-color($color-orange, .7);
+}
+
+.bg-orange-600 {
+  @include bg-color($color-orange, .6);
+}
+
+.bg-orange-500 {
+  @include bg-color($color-orange, .5);
+}
+
+.bg-pink {
+  @include bg-color($color-pink);
+  color: $color-white;
+}
+
+.bg-pink-900 {
+  @include bg-color($color-pink, .9);
+  color: $color-white;
+}
+
+.bg-pink-800 {
+  @include bg-color($color-pink, .8);
+  color: $color-white;
+}
+
+.bg-pink-700 {
+  @include bg-color($color-pink, .7);
+  color: $color-white;
+}
+
+.bg-pink-600 {
+  @include bg-color($color-pink, .6);
+  color: $color-white;
+}
+
+.bg-pink-500 {
+  @include bg-color($color-pink, .5);
+  color: $color-white;
+}
+
+.bg-dark-grey {
+  @include bg-color($color-dark-grey);
+  color: $color-white;
+}
+
+.bg-dark-grey-900 {
+  @include bg-color($color-dark-grey, .9);
+  color: $color-white;
+}
+
+.bg-dark-grey-800 {
+  @include bg-color($color-dark-grey, .8);
+  color: $color-white;
+}
+
+.bg-dark-grey-700 {
+  @include bg-color($color-dark-grey, .7);
+  color: $color-white;
+}
+
+.bg-dark-grey-600 {
+  @include bg-color($color-dark-grey, .6);
+  color: $color-white;
+}
+
+.bg-dark-grey-500 {
+  @include bg-color($color-dark-grey, .5);
+  color: $color-white;
+}
+
+.bg-gradient-purple{
+  @include linear-gradient(145deg, $color-purple 0%, $pink 80%);
+  color: $color-white;
+}
+
+.bg-gradient-orange{
+  @include linear-gradient(-145deg, $color-orange 0%, $pink 80%);
+  color: $color-white;
+}
+
+.Present,
+.present{
+  background-color: #A9D8BE;
+}
+.Excused,
+.excused{
+  background-color: #2F9DBB;
+}
+.n_a{
+  background-color: #efefef;
+}
+.Tardy,
+.tardy{
+  background-color: #4E73A7;
+}
+.Other,
+.other{
+  background-color: #765B74;
+}
+.Unexcused,
+.unexcused{
+  background-color: #CD5728;
+}
+.Improving{
+  -ms-transform: rotate(-45deg); /* IE 9 */
+  -webkit-transform: rotate(-45deg); /* Chrome, Safari, Opera */
+  transform: rotate(-45deg);
+  color:#92de70;
+}
+.Steady{
+  -ms-transform: rotate(0deg); /* IE 9 */
+  -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
+  transform: rotate(0deg);
+  color:#aab3b8;
+}
+.Worsening{
+  -ms-transform: rotate(45deg); /* IE 9 */
+  -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+  transform: rotate(45deg);
+  color:#d53149;
+}
+.dark{
+  background: #eee;
+}
+.light-dark{
+  background: #ccc;
+}
+
+.state{
+  background: #45b9cb;
+  color:white;
+}
+.state-font{
+  color: #45b9cb;
+}
+
+.map-font{
+  color: #F8973A;
+}
+
+.map{
+  background: #F8973A;
+  color:white;
+}
+
+.ctype-1 { background-color: #F36A21; }
+.ctype-2 { background-color: #47B749; }
+.ctype-3 { background-color: #F58120; }
+.ctype-4 { background-color: #50BE9A; }
+.ctype-5 { background-color: #F5A21D; }
+.ctype-6 { background-color: #51C4CF; }
+.ctype-7 { background-color: #F4BF18; }
+.ctype-8 { background-color: #AEC6DE; }
+.ctype-9 { background-color: #F4D40F; }
+.ctype-10 { background-color: #5DAADE; }
+.ctype-11 { background-color: #B6D234; }
+.ctype-12 { background-color: #7493CC; }
+.ctype-13 { background-color: #83C441; }
+.ctype-14 { background-color: #9B6AAD; }
+.ctype-15 { background-color: #50B848; }
+.ctype-16 { background-color: #B35FA5; }
+.ctype-17 { background-color: #50BE9A; }
+.ctype-18 { background-color: #D35D75; }
+.ctype-19 { background-color: #51C4CF; }
+.ctype-20 { background-color: #DF5E51; }
+.ctype-21 { background-color: #4EC6DE; }
+.ctype-22 { background-color: #EE6423; }
+.ctype-23 { background-color: #FFFFFF; }
+
+.ctype-font-1 { color: #F36A21; }
+.ctype-font-2 { color: #47B749; }
+.ctype-font-3 { color: #F58120; }
+.ctype-font-4 { color: #50BE9A; }
+.ctype-font-5 { color: #F5A21D; }
+.ctype-font-6 { color: #51C4CF; }
+.ctype-font-7 { color: #F4BF18; }
+.ctype-font-8 { color: #AEC6DE; }
+.ctype-font-9 { color: #F4D40F; }
+.ctype-font-10 { color: #5DAADE; }
+.ctype-font-11 { color: #B6D234; }
+.ctype-font-12 { color: #7493CC; }
+.ctype-font-13 { color: #83C441; }
+.ctype-font-14 { color: #9B6AAD; }
+.ctype-font-15 { color: #50B848; }
+.ctype-font-16 { color: #B35FA5; }
+.ctype-font-17 { color: #50BE9A; }
+.ctype-font-18 { color: #D35D75; }
+.ctype-font-19 { color: #51C4CF; }
+.ctype-font-20 { color: #DF5E51; }
+.ctype-font-21 { color: #4EC6DE; }
+.ctype-font-22 { color: #EE6423; }
+.ctype-font-23 { color: #FFFFFF; }

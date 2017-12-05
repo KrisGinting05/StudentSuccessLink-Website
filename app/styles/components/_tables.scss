@@ -1,0 +1,139 @@
+/*==============================
+=            Tables            =
+==============================*/
+
+/*----------  General Table Styles  ----------*/
+
+
+.table {
+  margin-bottom: 3em;
+    thead {
+
+        tr {
+            th {
+                border-top: 2px solid $grey-light !important;
+                padding-top: 2em;
+                vertical-align: top;
+                line-height: 1.2em;
+                a {
+                    position: relative;
+                    display: inline-block;
+                    color: $black;
+                    padding-right: 20px;
+                    &:hover{
+                      color: $dark-grey;
+                    }
+                    span{
+                      position: absolute;
+                      right: 0;
+                      color: $cyan;
+                    }
+                }
+            }
+        }
+    }
+    tbody {
+        tr {
+            &:hover {
+                background: darken($white, 2%);
+            }
+
+            a{
+              color: $cyan;
+              font-weight: 700;
+              transition: color 0.15s ease;
+              &:hover{
+                color: darken($cyan, 20%);
+              }
+            }
+        }
+    }
+}
+
+.table-responsive{
+  @media (max-width: $screen-md-max){
+    margin-bottom: 3em;
+  }
+
+  .table-space{
+    border-left: 20px solid $white;
+  }
+}
+
+
+
+/*----------  Labels  ----------*/
+
+
+.label{
+    display: inline-block;
+    height: 22px;
+    width: 22px;
+    line-height: 22px;
+    padding: 0;
+    font-size: 11px;
+    color: $white;
+    border-radius: 50%;
+}
+
+.label-primary{
+  color: $color-black;
+  border-radius: 8px;
+  padding: 0 8px;
+  background: darken($white, 5%);
+  width: auto;
+  height: auto;
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+
+.label-success{
+  background-color: $color-cyan;
+}
+
+.label-student{
+  background-color: $color-cyan !important;
+}
+
+.glyphicon-minus{
+  &:before{
+    content: "-";
+  }
+}
+
+.table-assessment{
+
+  tbody{
+    td{
+      width: 50%;
+    }
+  }
+
+}
+
+
+
+/*----------  Alerts  ----------*/
+.alert-success, .alert-danger{
+  font-size: rem(14);
+  background-color: transparent;
+  vertical-align: middle;
+}
+
+.alert-success{
+  color: $alert-green;
+}
+.alert-danger{
+  color: $alert-red;
+}
+
+table.floatThead-table {
+  border-top: none;
+  border-bottom: none;
+  background-color: #FFF;
+}
+.fsm-sticky-header{
+  background: #fff;
+  z-index: 1 !important;
+}
+

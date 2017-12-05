@@ -1,0 +1,115 @@
+<div ng-hide="vm.show_program_student" id="loading">
+  <span class="glyphicon glyphicon-refresh loading" aria-hidden="true"></span> <h3 class="loading-title display-inline">{{"views.loading" | translate}}</h3>
+</div>
+
+<div ng-show="vm.show_program_student" class="container-fluid" ng-class="currentURL">
+    <div class="row">
+
+      <header class="header-background clearfix inverse">
+        <div class="container">
+          <div class="pull-left">
+            <h1 class="page-title">{{vm.program.name}} Student</h1>
+          </div>
+          <div class="pull-right">
+            <button class="btn btn-reverse invite-user" ui-sref="dashboard.program_student_add({id:vm.id})">{{"views.programs.add_student" | translate}} {{vm.program.name}}</button>
+          </div>
+        </div>
+      </header>
+
+        <section class="main-content container">
+
+        <div class="col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8 col-xs-12">
+            <div class="row">
+                <div class="alert alert-info text-left message" ng-show=vm.message>
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> {{vm.message}}
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <form class="form-inline form-search">
+                <div class="form-group">
+                    <p class="form-control-static form-search-icon"><span class="glyphicon glyphicon-search"></span></p>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="search" class="form-control" ng-model="search" placeholder="Search Programs">
+                </div>
+            </form>
+        </div>
+        <div class="clearfix space20"></div>
+
+        <div class="col-xs-12">
+            <div class="table-responsive">
+                <table id="program_student" class="table">
+                    <thead fsm-sticky-header scroll-body="#program_student" scroll-stop="80">
+                <tr>
+                    <th>
+                        <a href="" ng-click="sortType = 'name';sortReverse = !sortReverse">
+                            Name
+                            <span ng-show="sortType == 'name' && !sortReverse" class="glyphicon glyphicon-menu-down"></span>
+                            <span ng-show="sortType == 'name' && sortReverse" class="glyphicon glyphicon-menu-up"></span>
+                        </a>
+                    </th>
+                    <th class="text-center">
+                        <a href="" ng-click="sortType = 'totalActive';sortReverse = !sortReverse">
+                            Active
+                            <span ng-show="sortType == 'totalActive' && !sortReverse" class="glyphicon glyphicon-menu-down"></span>
+                            <span ng-show="sortType == 'totalActive' && sortReverse" class="glyphicon glyphicon-menu-up"></span>
+                        </a>
+                    </th>
+                    <th class="text-center">
+                        <a href="" ng-click="sortType = 'totalStudent';sortReverse = !sortReverse">
+                            Start Date
+                            <span ng-show="sortType == 'totalStudent' && !sortReverse" class="glyphicon glyphicon-menu-down"></span>
+                            <span ng-show="sortType == 'totalStudent' && sortReverse" class="glyphicon glyphicon-menu-up"></span>
+                        </a>
+                    </th>
+                    <th class="text-center">
+                        <a href="" ng-click="sortType = 'totalStudent';sortReverse = !sortReverse">
+                            End Date
+                            <span ng-show="sortType == 'totalStudent' && !sortReverse" class="glyphicon glyphicon-menu-down"></span>
+                            <span ng-show="sortType == 'totalStudent' && sortReverse" class="glyphicon glyphicon-menu-up"></span>
+                        </a>
+                    </th>
+                    <th  class="text-center">
+                        <a href="" ng-click="sortType = 'cohorts';sortReverse = !sortReverse">
+                            Cohorts
+                            <span ng-show="sortType == 'cohorts' && !sortReverse" class="glyphicon glyphicon-menu-down"></span>
+                            <span ng-show="sortType == 'cohorts' && sortReverse" class="glyphicon glyphicon-menu-up"></span>
+                        </a>
+                    </th>
+                    <th class="text-center">{{"views.edit" | translate}}</th>
+                    <th class="text-center">{{"views.delete" | translate}}</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="student in vm.program_students |filter:search|orderBy:sortType:sortReverse">
+                    <td>
+
+                            {{student.name}}
+
+                    </td>
+                    <td class="text-center">
+                    <input type="checkbox" ng-model="student.active" ng-disabled="true"/>
+                    </td>
+                    <td class="text-center">
+                        {{student.start_date | date : 'MM/dd/yyyy' : timezone}}
+                    </td>
+                    <td class="text-center">
+                        {{student.end_date | date : 'MM/dd/yyyy' : timezone}}
+                    </td>
+                    <td ng-bind-html="student.cohort"></td>
+                    <td class="text-center">
+                        <a class="glyphicon glyphicon-pencil" ui-sref="dashboard.program_student_edit({id:vm.program._id,student_id:student.id})"></a>
+                    </td>
+                    <td class="text-center">
+                        <a class="glyphicon glyphicon-trash" ng-click="vm.deleteStudent(student.id,$index)"></a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+      </section>
+    </div>
+</div>

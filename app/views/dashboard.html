@@ -1,0 +1,98 @@
+<nav class="navbar navbar-fixed-top inverse">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+                <a class="navbar-brand" ui-sref="dashboard.student">
+                    <img src="images/logo-reverse.svg" alt="logo" class="pull-left">
+                    <span class="beta">BETA</span>
+                </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li ng-class="{ 'active': currentURL.indexOf('student') != -1 &&  currentURL.indexOf('program') === -1 }">
+                        <div class="arrow-container"><div class="arrow-down"></div></div>
+                        <a class="text-center text-uppercase" ui-sref="dashboard.student">{{"views.students" | translate}}</a>
+                    </li>
+                    <li ng-class="{ 'active': currentURL.indexOf('program') != -1 }">
+                        <div class="arrow-container"><div class="arrow-down"></div></div>
+                        <a class="text-center text-uppercase" ui-sref="dashboard.program">{{"views.dashboard.programs" | translate}}</a>
+                    </li>
+                  <!--   <li ng-class="{ 'active': currentURL.indexOf('report') != -1 }">
+                        <div class="arrow-container"><div class="arrow-down"></div></div>
+                        <a class="text-center text-uppercase" ui-sref="dashboard.report">{{"views.dashboard.reports" | translate}}</a>
+                    </li> -->
+                    <li ng-show="vm.dashboard_show_manage" ng-class="{ 'active': currentURL.indexOf('manage') != -1 || currentURL.indexOf('user') != -1 }">
+                        <div class="arrow-container"><div class="arrow-down"></div></div>
+                        <a class="text-center text-uppercase" ui-sref="dashboard.manage">{{"views.dashboard.manage" | translate}}</a>
+                    </li>
+                </ul>
+                <ul class="nav-profile">
+                    <li class="profile-tab">
+                        <div class="user-profile">
+                            <div class="circle-profile">
+                                <img gravatar-src="vm.email" gravatar-size="50">
+                            </div>
+                            <div class="circle-profile-text">{{"views.dashboard.log_in_as" | translate}} <br/><strong>{{vm.full_name}}</strong></div>
+                        </div>
+                    </li>
+                    <li class="logout-tab text-center">
+                        <div class="user-data">
+                            <a ui-sref="dashboard.user_edit" class="edit-profile">{{"views.dashboard.edit_profile" | translate}}</a>
+                            <div class="btn-dark-container">
+                              <button class="btn btn-dark" ng-click="vm.logout()">{{"views.dashboard.log_out" | translate}}</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<section class="main-section">
+    <main class="main">
+        <ui-view></ui-view>
+    </main>
+</section>
+
+<footer class="inverse">
+    <div class="container-fluid">
+        <div class="footer-container">
+            <div class="col-sm-7">
+                <div class="row">
+                    <div class="footer-widget footer-widget-1">
+                        <p>{{"views.dashboard.ferpa" | translate}} <a href="">{{"views.dashboard.student_success_link" | translate}}</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="row">
+                    <div class="footer-widget footer-widget-2">
+                        <ul>
+                            <li><a target="_blank" href="https://www.psesd.org/services/learning-and-teaching/student-success-link/">{{"views.about_student_success_link" | translate}}</a></li><br/>
+                            <li><a target="_blank" href="https://www.psesd.org/student-success-link-privacy-policy/">{{"views.privacy_policy" | translate}}</a></li>
+                        </ul>
+                        <div class="copyright"><a target="_blank" href="https://www.psesd.org">&copy;{{"views.dashboard.copyright" | translate}}</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="row">
+                    <div class="footer-widget footer-widget-3">
+                        <div class="btn-dark-container">
+                          <a target="_blank" href="https://www.psesd.org/services/learning-and-teaching/student-success-link/" class="btn btn-dark">{{"views.dashboard.help" | translate}}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,31 @@
+<div class="container-fluid user_edit_permission">
+    <div class="row">
+        <header class="header-background clearfix inverse">
+            <div class="container">
+                <div class="pull-left">
+                    <h1 class="page-title" ng-show="vm.user.full_name">{{"views.assign_role"|translate}} : {{vm.user.full_name}}</h1>
+                </div>
+            </div>
+        </header>
+        <section class="main-content container">
+            <div class="alert alert-info text-left message" ng-show=vm.message>
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> {{vm.message}}
+            </div>
+            <div class="col-md-6">
+                <form>
+                    <div class="form-group">
+                        <label for="role" class="control-label">{{"views.role"|translate}}:</label>
+                        <div class="selectwrap">
+                            <select class="form-control" ng-model="vm.user.role" id="role">
+                                <option value="admin">{{"views.admin"|translate}}</option>
+                                <option value="case-worker-unrestricted">{{"views.assigned_users_regular"|translate}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button ng-click="vm.update(vm.user)">{{"views.submit"|translate}}</button>
+                    <button ng-click="goBack()">{{"views.back"|translate}}</button>
+                </form>
+            </div>
+        </section>
+    </div>
+</div>

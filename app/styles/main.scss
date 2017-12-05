@@ -1,0 +1,42 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+@import "common/_variables.scss";
+@import "common/_functions.scss";
+@import "common/_mixins.scss";
+@import "common/_global.scss";
+@import "common/_colors.scss";
+@import "components/_tables.scss";
+@import "components/_buttons.scss";
+@import "components/_forms.scss";
+@import "components/_modals.scss";
+@import "components/_popover.scss";
+@import "components/_tabs.scss";
+@import "layout/_typography.scss";
+@import "layout/_dashboard.scss";
+@import "layout/_header.scss";
+@import "layout/_footer.scss";
+@import "layout/_page.scss";
+@import "layout/_login.scss";
+@import "layout/_404.scss";
+@import "libs/_jquery-ui.scss";
+
+/*
+@import "_variables.scss";
+@import "_mixins.scss";
+@import "_page.scss";
+@import "_typography.scss";
+@import "_component.scss";
+@import "_styles.scss";
+@import "_user";
+@import "_dashboard.scss";
+@import "_login.scss";
+@import "_forgot.scss";
+@import "_submission.scss";
+@import "_reset";
+@import "_user_edit.scss";
+@import "_user_edit_permission.scss";
+@import "_user_group.scss";
+*/

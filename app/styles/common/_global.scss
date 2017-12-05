@@ -1,0 +1,139 @@
+html {
+  @include font($font-family-open-sans, 12px, 1.5, 400);
+  height: 100%;
+}
+body{
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  @include font($font-family-open-sans, 1em, 1.5, 400);
+  color: $color-black;
+}
+
+h1{
+  @include font($font-family-kreon, 3em, 1.166666666666667, 700);
+}
+h2{
+  @include font($font-family-open-sans, 2.333333333333333em, 1.285714285714286, 700);
+}
+h3{
+  @include font($font-family-open-sans, 1.333333333333333em, 1.5, 700);
+}
+h4{
+  @include font($font-family-open-sans, 1.166666666666667em, 1.571428571428571, 700);
+}
+h5{
+  @include font($font-family-open-sans, 1em, 1.5 ,700);
+}
+h6{
+  @include font($font-family-open-sans, 0.833333333333333em, 1.5, 700);
+}
+
+a{
+  color: $color-cyan;
+  text-decoration: none;
+
+  &:focus,
+  &:hover{
+    color: $color-teal;
+    text-decoration: none;
+  }
+}
+
+.normal {
+  font-weight: 400 !important;
+}
+.bold {
+  font-weight: 700 !important;
+}
+.italic {
+  font-style: italic !important;;
+}
+.capitalize {
+  text-transform: capitalize !important;
+}
+.uppercase {
+  text-transform: uppercase !important;;
+}
+
+.inverse {
+  color: $color-white;
+  background-color: $color-black;
+}
+.full-height {
+  height: 100%;
+}
+.detail-item{
+  height: 50px;
+  line-height: 50px;
+}
+
+.display-flex{
+  display: flex;
+}
+.align-items-center{
+  align-items: center;
+}
+.flex-grow-1{
+  flex-grow: 1;
+}
+.flex-grow-2{
+  flex-grow: 2;
+}
+.full-width{
+  width: 100%;
+}
+.no-padding{
+  padding:0;
+}
+.justify-content-center{
+  justify-content: center;
+}
+.justify-content-flex-end{
+  justify-content: flex-end;
+}
+.container-fluid .container{
+  width: auto;
+  margin-left: 10%;
+  margin-right: 10%;
+
+  @media (max-width: $screen-sm-max) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.break-word {
+word-wrap: break-word;
+}
+.display-inline{
+  display: inline;
+}
+
+#loading{
+  position: absolute;
+  height: 100px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+
+
+}
+
+
+span{
+  &.glyphicon-refresh{
+    &.loading{
+      font-size: 18px;
+      -webkit-animation:spin 1s linear infinite;
+      -moz-animation:spin 1s linear infinite;
+      animation:spin 1s linear infinite;
+      &.update{
+        font-size: 10px;
+      }
+    }
+  }
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }

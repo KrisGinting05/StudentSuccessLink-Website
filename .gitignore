@@ -1,0 +1,14 @@
+/node_modules
+/dist
+/.tmp
+/.sass-cache
+/bower_components
+/.history
+.idea
+/app/scripts/env.js
+env.js
+local.json
+*debug.log
+npm-debug*
+.vscode/*
+dump.rdb

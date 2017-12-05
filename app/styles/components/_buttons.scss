@@ -1,0 +1,190 @@
+.btn:-webkit-autofill,
+.btn:-webkit-autofill:hover,
+.btn:-webkit-autofill:focus,
+.btn:-webkit-autofill:active,
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+
+
+button {
+    position: relative;
+    display: inline-block;
+    min-width: 80px;
+    padding: 2px 15px;
+    margin: 5px;
+    font-family: $font-family-kreon;
+    font-weight: 700;
+    font-size: rem(14);
+    color: $color-grey;
+    background-color: $color-white;
+    border: 0;
+    border-radius: 15px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.2s ease-in-out;
+    box-shadow: none;
+
+    &:after {
+        position: absolute;
+        content: '';
+        top: -2px;
+        bottom: -2px;
+        left: -2px;
+        right: -2px;
+        z-index: -1;
+        border-radius: 15px;
+        @include linear-gradient(45deg, $cyan 0%, $purple 100%);
+    }
+    &:focus,
+    &:hover {
+        background-color: transparent;
+        color: $color-white;
+        outline: none;
+        box-shadow: none;
+        text-decoration: none !important;
+    }
+}
+
+//Button Default
+.btn {
+    -webkit-appearance: none;
+    @extend button;
+}
+
+//Button Login
+button.btn-login,
+.btn.btn-login {
+    padding: 15px 40px;
+    color: $color-white;
+    border: 3px $color-white solid;
+    background-color: transparent;
+    text-transform: uppercase;
+    margin: 30px auto;
+    border-radius: 30px;
+    @include font($font-family-kreon, 1.5em, 1.444444444444444, 700);
+
+    &:after{
+      background: none;
+    }
+
+    &:focus,
+    &:hover {
+        color: $color-cyan;
+        background-color: $color-white;
+    }
+
+
+}
+
+//Button Reverse
+button.btn-reverse,
+.btn.btn-reverse {
+    background-color: transparent;
+    border: 2px $color-white solid;
+    color: $white;
+
+    &:after{
+      background: none;
+    }
+
+    &:focus,
+    &:hover {
+        color: $color-cyan;
+        background-color: $color-white;
+    }
+}
+
+//Button Dark
+
+
+.btn-dark-container{
+  //Must set parent element with relative position to have dark background work with :psudo element because of z-index.
+  position: relative;
+  z-index: 1;
+
+}
+
+button.btn-dark,
+.btn.btn-dark {
+    background: $color-black;
+    &:focus,
+    &:hover {
+      background: transparent;
+      color: $color-white !important;
+    }
+}
+
+//Button Dropdown
+
+.dropdown-toggle{
+  border: 1px solid $grey-light;
+  color: $black;
+  font-family: $font-family-sans-serif;
+  text-transform: none;
+  font-weight: normal;
+  text-align:left;
+  padding: 2px 50px 2px 15px;
+  min-width: 120px;
+
+  &:hover{
+    color: $black;
+  }
+  &:after{
+    position: relative;
+  }
+
+  .caret{
+    right: 20px !important;
+    top: 5px !important;
+    border: none;
+    &:after{
+      color: $cyan;
+      display: inline-block;
+      line-height: 1;
+      font-family: 'Glyphicons Halflings';
+      content: "\e114";
+    }
+  }
+}
+
+//Dropdown Active
+.open > .btn-default.dropdown-toggle{
+  background-color: lighten($grey-light, 10%) !important;
+      box-shadow: none !important;
+      border: 1px solid $grey-light !important;
+}
+
+
+
+//Button Helper Classes
+button.no-width,
+.btn.no-width {
+    min-width: 0;
+}
+
+button.btn-full,
+.btn.btn-full {
+    display: block;
+    width: 100%;
+}
+
+
+button.btn-circle,
+.btn.btn-circle {
+    min-width: 0;
+    padding: 2px 5px;
+}
+
+
+.ui-widget-content .ui-icon {
+    background-image: url("/bower_components/jquery-ui/themes/base/images/ui-icons_444444_256x240.png") !important;
+}
+
+.ui-widget-header .ui-icon {
+    background-image: url("/bower_components/jquery-ui/themes/base/images/ui-icons_444444_256x240.png") !important;
+}

@@ -1,0 +1,42 @@
+.popover
+{
+  min-width: 150px;
+
+  .popover-content
+  {
+    padding: 0;
+
+    .panel-default
+    {
+      margin-bottom: 0;
+      border: 0;
+
+      .panel-heading
+      {
+        color: $color-black;
+      }
+
+      .panel-body
+      {
+        color: $color-black;
+        padding: 10px 15px;
+      }
+    }
+  }
+}
+
+.list-modal{
+ padding: 10px 15px;
+}
+
+.popover-assessment{
+  .popover-content{
+    padding: 20px 15px;
+  }
+}
+
+.student_detail-page{
+  .popover{
+   padding: 10px 15px;
+  }
+}
