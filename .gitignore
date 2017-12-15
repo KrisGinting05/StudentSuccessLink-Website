@@ -6,7 +6,6 @@
 .idea
 /app/scripts/env.js
 env.js
-local.json
 *debug.log
 npm-debug*
 .vscode/*
