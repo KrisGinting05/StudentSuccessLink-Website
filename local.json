@@ -1,7 +1,7 @@
 {
  "CLIENT_ID":"cbo_client_demo",
   "CLIENT_SECRET":"7e98a24f4fe91535348f6e87cde866dca9134b50fc029abefdc7278369f2",
-  "AUTH_URL":"http://ssl-auth.demo.s360.is:3000/",
+  "AUTH_URL":"http://ssl-auth.demo.s360.is:3000/api",
   "API_URL":"http://ssl-api.demo.s360.is:4000/",
   "RESPONSE_TYPE":"code",
   "GRANT_TYPE":"password",
